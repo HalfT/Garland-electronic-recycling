@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Garland Electronic Recycling</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <div id="feedback"></div>
+    <div id="content">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="schedulepickup.html">Schedule Pickup</a></li>
+            <li><a href="dropoff.html">Drop Off</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <div class="banner-box">
+          <img
+            class="logo-box"
+            src="https://cdn.glitch.global/ed0b705f-7bd7-4ddd-b7a2-36a5b5cf2541/GED%20(1).gif?v=1653109608104"
+            alt="GER Logo"
+          />
+
+          <img
+            class="banner"
+            src="https://cdn.glitch.global/ed0b705f-7bd7-4ddd-b7a2-36a5b5cf2541/jake-nebov-OPjxGV7ubsY-unsplash.jpg?v=1653152307635"
+            alt="Warehouse"
+          />
+          <h1 class="headline">
+            Schedule<br /><span class="tab"></span>Pickup
+          </h1>
+        </div>
+
+        <div class="pickup-grid">
+          <p class="p-pickup-paragraph-1">
+            - Do you have a lot of items to recycle?
+            Let us come and pick up your items so you won't have to worry about
+            it. It would be our pleasure to take old equipment off of your hands.
+          </p>
+
+          <form action="/my-handling-form-page" method="post">
+            <ul>
+              <li>
+                <label for="firstname">Firstname:</label>
+                <input type="text" id="firstname" name="first_name" />
+              </li>
+              <li>
+                <label for="lastname">Lastname:</label>
+                <input type="text" id="lastname" name="last_name" />
+              </li>
+              <li>
+                <label for="phonenumber">Phone Number:</label>
+                <input type="text" id="phonenumber" name="phonenumber" />
+              </li>
+              <li>
+                <label for="mail">E-mail:</label>
+                <input type="email" id="mail" name="user_email" />
+              </li>
+              <li>
+                <label for="buisness">Buisness Name:</label>
+                <input type="text" id="buisness" name="buisness" />
+              </li>
+              <li>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" />
+              </li>
+              <li>
+                <label for="msg">Quantity of Pickup:</label>
+                <textarea id="msg" name="user_message"></textarea>
+              </li>
+              <li class="button">
+                <button type="submit">Submit</button>
+              </li>
+            </ul>
+            <script>
+              // get the feedback div element so we can do something with it.
+              const feedbackElement = document.getElementById("feedback");
+              // get the form so we can read what was entered in it.
+              const formElement = document.forms[0];
+              // add a 'listener' to wait for a submission of our form. When that happens run the code below.
+              formElement.addEventListener("submit", function (e) {
+                // stop the form from doing the default action
+                e.preventDefault();
+                // set the contents of our feedback element to a message letting the user know the form was submitted successfully. Notice that we pull the name that was entered in the form to personalize the message!
+                feedbackElement.innerHTML =
+                  "Hello " +
+                  formElement.first_name.value +
+                  "! Thank you for your message. We will get back with you as soon as possible!";
+                // make the feedback element visible.
+                feedbackElement.style.display = "block";
+                // add a class to move everything down so our message doesn't cover it.
+                document.body.classList.toggle("moveDown");
+              });
+            </script>
+          </form>
+
+          <img
+            class="p-pickup-picture2"
+            src="https://cdn.glitch.global/ed0b705f-7bd7-4ddd-b7a2-36a5b5cf2541/markus-spiske-RWTUrJf7I5w-unsplash.jpg?v=1653152313663"
+            alt="truck"
+          />
+        </div>
+         <footer>
+          <p class="footer_p">
+            &copy; 2022 Tanner Chadaz | Section WDD 130 - B |
+            <a href="site-plan.html">Site Plan</a> |
+            <a href="dropoff.html">Contact US</a>
+          </p>
+          <div class="social">
+            <a href="https://www.facebook.com/" target="_blank"
+              ><img
+                src="https://cdn.glitch.global/8165205f-a35c-4081-a74d-7dfae2a4377c/facebook.png?v=1651356983828"
+                alt="Facebook icon"
+            /></a>
+            <a href="https://www.twitter.com/" target="_blank"
+              ><img
+                src="https://cdn.glitch.global/8165205f-a35c-4081-a74d-7dfae2a4377c/twitter.png?v=1651356986320"
+                alt="Twitter icon"
+            /></a>
+            <a href="https://www.youtube.com/" target="_blank"
+              ><img
+                src="https://cdn.glitch.global/8165205f-a35c-4081-a74d-7dfae2a4377c/youtube.png?v=1651356989123"
+                alt="YouTube icon"
+            /></a>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
